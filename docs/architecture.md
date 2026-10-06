@@ -7,30 +7,7 @@ without changing a line of application code.
 
 ## Component view
 
-```mermaid
-flowchart TB
-    UI[Streamlit UI]
-    AGENT[LangGraph Agent<br/>ReAct + tools]
-    LITELLM[LiteLLM Proxy<br/>OpenAI-compatible API]
-    QDRANT[Qdrant<br/>Vector store, Docker]
-    NEMO[NeMo Guardrails<br/>I/O filtering + Llama Guard 3]
-    OLLAMA[Ollama Runtime<br/>Llama 3.3 8B, nomic-embed-text,<br/>Llama Guard 3]
-    LANGFUSE[Langfuse<br/>Traces + observability]
-    EVAL[Ragas + DeepEval<br/>Offline evaluation vs golden dataset]
-
-    UI --> AGENT
-    AGENT --> LITELLM
-    AGENT --> QDRANT
-    AGENT --> NEMO
-    AGENT -.->|traces| LANGFUSE
-    LITELLM --> OLLAMA
-    EVAL -.->|offline| AGENT
-
-    classDef runtime fill:#e8f4f8,stroke:#2a6f88
-    classDef offline fill:#f8f0e8,stroke:#88612a,stroke-dasharray: 4 2
-    class UI,AGENT,LITELLM,QDRANT,NEMO,OLLAMA runtime
-    class EVAL,LANGFUSE offline
-```
+![CreditDoc AI Architecture](architecture.excalidraw.png)
 
 ## Runtime loop
 
