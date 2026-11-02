@@ -1,0 +1,55 @@
+Licenciement et crédit immobilier : comment suspendre vos mensualités devant le juge ?
+Perdre son emploi quand on rembourse un prêt immobilier, c'est la double peine. Le salaire s'arrête, les allocations mettent des semaines à arriver, et la mensualité, elle, tombe à date fixe. Beaucoup d'emprunteurs pensent qu'ils n'ont que deux options : puiser dans l'épargne jusqu'à l'épuisement, ou laisser filer les impayés et attendre le courrier de la banque. Il en existe une troisième, prévue par le Code de la consommation et trop peu utilisée : demander au juge de suspendre le remboursement du crédit pendant deux ans au plus, sans intérêts si le juge le décide. L'article L314-20 du Code de la consommation, réécrit par une loi du 12 juin 2026, organise ce délai de grâce. Voici comment il fonctionne, ce qu'il faut préparer et les erreurs qui ferment la porte.
+
+Après un licenciement, la mensualité du crédit ne s'arrête pas toute seule
+Le contrat de prêt ne contient aucune clause de suspension automatique en cas de perte d'emploi. Tant que rien n'est signé ou jugé, chaque échéance reste due à sa date. Dès le premier prélèvement rejeté, la banque facture des frais et commence à compter les intérêts de retard. Au deuxième ou troisième impayé, elle envoie une mise en demeure, puis prononce la déchéance du terme : la totalité du capital restant dû devient exigible d'un coup. C'est à ce stade que le dossier bascule vers le contentieux, avec inscription au FICP et, à terme, saisie sur les comptes ou sur le bien.
+
+⚖️ Un point mérite d'être connu. La Cour de cassation exige que la déchéance du terme soit précédée d'une mise en demeure restée sans effet, qui indique le délai laissé à l'emprunteur pour régulariser, sauf clause expresse et non équivoque du contrat qui en dispense la banque (Civ. 1re, 22 juin 2017, n° 16-18418). Une banque qui saute cette étape fragilise toute la procédure qui suit. Mais attendre que la banque commette une erreur n'est pas une stratégie. Il vaut mieux agir avant.
+
+L'assurance perte d'emploi : vérifiez avant de compter dessus
+
+Beaucoup d'emprunteurs croient être couverts parce qu'ils ont souscrit une assurance emprunteur. Or la garantie perte d'emploi est une option, rarement prise, et ses conditions sont étroites : elle vise en général le licenciement d'un salarié en CDI, avec un délai de carence après la souscription, une franchise de plusieurs mois après la perte d'emploi et une durée d'indemnisation plafonnée. La démission et souvent la rupture conventionnelle sont exclues. Relisez les conditions particulières du contrat plutôt que la plaquette commerciale. Si la garantie existe, déclarez le sinistre tout de suite : les délais de déclaration sont courts.
+
+Le délai de grâce de l'article L314-20 du Code de la consommation
+Ce texte figure dans les dispositions communes au crédit à la consommation et au crédit immobilier. Il permet au juge de suspendre l'exécution des obligations de l'emprunteur, "notamment en cas de licenciement", dans les conditions de l'article 1343-5 du Code civil. Concrètement :
+
+le juge peut reporter ou échelonner le paiement des sommes dues dans la limite de deux ans ;
+
+l'ordonnance peut décider que, pendant le délai de grâce, les sommes dues ne produisent pas d'intérêt. Ce n'est pas automatique, il faut le demander et le justifier ;
+
+le juge peut fixer dès maintenant les modalités de remboursement des échéances reportées, ou attendre la fin de la suspension pour le faire. Le dernier versement ne peut pas dépasser de plus de deux ans le terme prévu au contrat ;
+
+pendant la période de grâce, les procédures d'exécution engagées par la banque sont suspendues et les majorations ou pénalités de retard cessent de courir, par application de l'article 1343-5 du Code civil.
+
+illustration
+Ce que la loi du 12 juin 2026 a changé
+
+Jusqu'en juin 2026, le texte ne citait qu'un exemple de situation ouvrant droit au délai de grâce : le licenciement. La loi n° 2026-492 du 12 juin 2026, consacrée aux parents d'enfants atteints d'un cancer, d'une maladie grave ou d'un handicap, a ajouté un second cas explicite : l'obtention de l'allocation journalière de présence parentale. Le parent qui réduit ou interrompt son activité pour s'occuper de son enfant peut donc, lui aussi, demander la suspension de son crédit. La version en vigueur depuis le 14 juin 2026 le dit en toutes lettres.
+
+Le mot "notamment" reste dans le texte. Les deux cas cités sont des exemples, pas une liste fermée. Une baisse brutale de revenus pour une autre raison sérieuse peut fonder la demande, à condition de la prouver.
+
+Quel juge saisir et comment ?
+La demande relève du juge des contentieux de la protection, au tribunal judiciaire du lieu où demeure l'emprunteur. Il est saisi par assignation délivrée à la banque et statue par ordonnance. On peut y aller seul, mais la banque, elle, sera représentée par un avocat rompu à ces audiences. Le dossier se gagne sur les pièces.
+
+Les pièces qui font la différence
+la lettre de licenciement et l'attestation France Travail, pour établir la cause de la demande ;
+
+un état précis des revenus avant et après : bulletins de salaire des derniers mois, notification des allocations, éventuellement l'attestation de l'employeur sur les sommes versées au titre de la rupture ;
+
+un budget mensuel honnête, charges comprises, qui montre l'impossibilité actuelle de payer et la capacité de reprendre à l'issue de la suspension ;
+
+les démarches de recherche d'emploi ou de reconversion en cours. Le juge apprécie la bonne foi et les perspectives de retour à meilleure fortune ;
+
+le tableau d'amortissement et les derniers relevés, pour chiffrer exactement ce qui est demandé.
+
+Les trois erreurs qui font échouer la demande
+attendre la déchéance du terme : une fois le capital rendu exigible, la discussion avec la banque porte sur la totalité du prêt, plus sur quelques mensualités. Le délai de grâce reste possible, mais le rapport de force a changé ;
+demander une suspension totale sans proposer de reprise : le juge accorde plus volontiers un report assorti d'un calendrier réaliste qu'un silence de deux ans sans perspective ;
+rester muet face à la banque : une demande écrite de report d'échéances, adressée avant de saisir le juge, montre que l'emprunteur a cherché une solution amiable. Le refus de la banque, ou son absence de réponse, devient une pièce du dossier.
+Négocier avec la banque en parallèle
+De nombreux contrats de prêt immobilier prévoient une clause de modulation ou de report d'échéances, utilisable une ou deux fois sur la durée du prêt, parfois sans frais. C'est souvent la voie la plus rapide. Mais le report contractuel a ses limites : la durée est courte, les intérêts continuent de courir et la banque peut le refuser si des impayés existent déjà. Le passage devant le juge s'impose quand la négociation échoue ou quand la banque a déjà engagé le recouvrement.
+
+Dans tous les cas, l'objectif est le même : éviter que la perte d'emploi ne se transforme en perte du logement. Le droit prévoit des outils pour cela. Encore faut-il les utiliser dans le bon ordre, avec un dossier solide.
+
+illustration
+Maître Guillaume PIERRE, avocat en droit bancaire à Paris, assiste les emprunteurs dans leurs litiges de crédit immobilier avec leur banque, à Paris et partout en France. Le premier échange téléphonique est gratuit et permet d'évaluer si une demande de délai de grâce a des chances d'aboutir dans votre situation.

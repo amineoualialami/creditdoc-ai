@@ -40,7 +40,7 @@ def read_file(path: Path) -> str:
         from pypdf import PdfReader
         reader = PdfReader(str(path))
         return "\n".join(page.extract_text() or "" for page in reader.pages)
-    elif ext in {".html", ".htm"}:
+    elif ext in {".html", ".htm",".mhtml"}:
         from bs4 import BeautifulSoup
         with open(path, encoding="utf-8") as f:
             soup = BeautifulSoup(f.read(), "html.parser")

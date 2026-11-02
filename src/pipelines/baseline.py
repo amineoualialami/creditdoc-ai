@@ -8,6 +8,11 @@ import time
 from typing import Dict, Any
 from dotenv import load_dotenv
 import litellm
+from src.observability.langfuse_helper import new_trace, span, log_generation
+
+OLLAMA_BASE = os.getenv("OLLAMA_API_BASE", "http://localhost:11434")
+QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
+COLLECTION = os.getenv("QDRANT_COLLECTION", "creditdoc")
 
 load_dotenv()
 
@@ -20,23 +25,41 @@ SYSTEM_PROMPT = (
 
 
 def run_baseline(question: str) -> Dict[str, Any]:
-    """Call the LLM alone with no retrieved context."""
     start = time.time()
-    response = litellm.completion(
-        model=os.getenv("LITELLM_MODEL"),
-        api_base=os.getenv("OLLAMA_API_BASE", "http://localhost:11434"),
-        messages=[
+    model_name = os.getenv("LITELLM_MODEL", "ollama/phi4")
+
+    trace = new_trace(name="baseline", question=question,
+                      pipeline="baseline", tags=["no_rag"])
+
+    with span(trace, "prompt_build", {"n_chunks": 0}) as s:
+        messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": question},
-        ],
-        temperature=0.2,
+        ]
+        s["output"] = {"prompt_chars": sum(len(m["content"]) for m in messages)}
+
+    response = litellm.completion(
+        model=model_name, api_base=OLLAMA_BASE,
+        messages=messages, temperature=0.2,
     )
+    answer = response.choices[0].message.content
+    usage = {
+        "input": response.usage.prompt_tokens,
+        "output": response.usage.completion_tokens,
+        "total": response.usage.total_tokens,
+    }
+    log_generation(trace, "llm_answer", model=model_name,
+                   messages=messages, answer=answer, usage=usage)
+
+    latency = time.time() - start
+    trace.update(output={"answer": answer},
+                 metadata={"latency_s": latency, "n_contexts": 0})
+
     return {
-        "answer": response.choices[0].message.content,
-        "retrieved_contexts": [],  # no retrieval in baseline
-        "latency_s": round(time.time() - start, 2),
-        "prompt_tokens": response.usage.prompt_tokens,
-        "completion_tokens": response.usage.completion_tokens,
+        "answer": answer,
+        "retrieved_contexts": [],
+        "latency_s": latency,
+        "model": model_name,
     }
 
 

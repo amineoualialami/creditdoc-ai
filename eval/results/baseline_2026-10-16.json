@@ -1,0 +1,193 @@
+{
+  "pipeline": "baseline",
+  "timestamp": "2026-10-16T17:37:02.218577Z",
+  "n_entries": 15,
+  "scores_summary": {
+    "faithfulness": 0.4873544973544973,
+    "answer_relevancy": 0.6694899384681239,
+    "context_precision": 0.0,
+    "context_recall": 0.48333333333333334
+  },
+  "scores_per_entry": [
+    {
+      "user_input": "Quelle est la différence entre un TAEG et un TEG ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Le TAEG (Taux Annuel Effectif Global) et le TEG (Taux Effectif Global) sont deux indicateurs utilisés pour évaluer le coût d'un crédit, mais ils diffèrent principalement par leur période de référence.\n\n1. **TAEG** : C'est le taux annuel effectif global. Il prend en compte tous les frais et coûts associés au crédit sur une base annuelle. Le TAEG est obligatoire pour les crédits à la consommation et permet de comparer facilement les offres de différents établissements en fournissant une vue d'ensemble du coût total du crédit sur une année.\n\n2. **TEG** : C'est le taux effectif global, mais calculé sur une base mensuelle. Il est souvent utilisé pour les crédits immobiliers et les crédits renouvelables. Le TEG permet de comprendre le coût mensuel du crédit, ce qui peut être utile pour les prêts à remboursement variable ou les crédits renouvelables.\n\nEn résumé, le TAEG est annuel et s'applique principalement aux crédits à la consommation, tandis que le TEG est mensuel et est souvent utilisé pour les crédits immobiliers et renouvelables.",
+      "reference": "Le TAEG (Taux Annuel Effectif Global) a remplacé le TEG depuis 2016 pour les crédits à la consommation. Il inclut tous les frais obligatoires du crédit : intérêts, assurance, frais de dossier et autres frais imposés à l'emprunteur. Le TEG, ancienne appellation, couvrait un périmètre plus restreint.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7919362135031999,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Qu'est-ce que le ratio d'endettement maximum en France pour un prêt immobilier ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "En France, le ratio d'endettement maximum pour un prêt immobilier est généralement fixé à 33 % des ressources mensuelles nettes. Cela signifie que le remboursement total de tous les crédits (y compris le crédit immobilier) ne doit pas dépasser 33 % des revenus mensuels nets du ménage. Cependant, certains établissements bancaires peuvent accepter des ratios d'endettement plus élevés, parfois jusqu'à 35 % ou 40 %, en fonction de la situation financière du demandeur et d'autres critères d'évaluation. Il est important de noter que ces ratios peuvent varier en fonction des politiques de chaque banque.",
+      "reference": "Le Haut Conseil de Stabilité Financière (HCSF) a fixé le taux d'effort maximum à 35% des revenus nets de l'emprunteur, assurance incluse, pour les prêts immobiliers. Cette règle est en vigueur depuis janvier 2022. Les banques peuvent y déroger pour 20% de leur production trimestrielle.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.7550482141621716,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Pour un prêt de 10 000 EUR sur 24 mois à 4.5% TAEG, calcule la mensualité constante.",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Pour calculer la mensualité constante d'un prêt de 10 000 EUR sur 24 mois à un TAEG de 4,5 %, nous utilisons la formule de l'annuité :\n\n\\[ M = \\frac{P \\times r \\times (1 + r)^n}{(1 + r)^n - 1} \\]\n\noù :\n- \\( M \\) est la mensualité,\n- \\( P \\) est le montant du prêt (10 000 EUR),\n- \\( r \\) est le taux d'intérêt mensuel (TAEG/12),\n- \\( n \\) est le nombre de mensualités (24).\n\nLe taux d'intérêt mensuel \\( r \\) est de \\( \\frac{4,5\\%}{12} = 0,375\\% = 0,00375 \\).\n\nEn substituant les valeurs dans la formule :\n\n\\[ M = \\frac{10 000 \\times 0,00375 \\times (1 + 0,00375)^{24}}{(1 + 0,00375)^{24} - 1} \\]\n\n\\[ M = \\frac{37,5 \\times (1,00375)^{24}}{(1,00375)^{24} - 1} \\]\n\n\\[ M \\approx \\frac{37,5 \\times 1,093443}{1,093443 - 1} \\]\n\n\\[ M \\approx \\frac{41,0276625}{0,093443} \\]\n\n\\[ M \\approx 439,02 \\]\n\nLa mensualité constante est d'environ 439,02 EUR.",
+      "reference": "La mensualité constante est d'environ 436.07 EUR. Formule : M = C × t / (1 - (1 + t)^-n), avec C = 10 000, t = 0.045/12 = 0.00375, n = 24. Coût total du crédit : environ 465.68 EUR d'intérêts.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6763178848137525,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Un emprunteur gagne 3500 EUR nets par mois. Quel est le montant maximum de mensualités de crédit qu'il peut assumer selon la règle du 35% ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Selon la règle du 35%, un emprunteur ne devrait pas consacrer plus de 35% de son revenu net mensuel aux mensualités de crédit. Pour un revenu net mensuel de 3 500 EUR, le calcul est le suivant :\n\n\\[ 3 500 \\, \\text{EUR} \\times 0,35 = 1 225 \\, \\text{EUR} \\]\n\nAinsi, le montant maximum de mensualités de crédit qu'il peut assumer est de 1 225 EUR par mois.",
+      "reference": "Selon la règle HCSF du taux d'effort à 35%, les mensualités totales de crédit (y compris assurance emprunteur) ne doivent pas dépasser 1 225 EUR par mois (3 500 × 0.35).",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6634539658276414,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quelles sont les obligations d'information précontractuelle d'un prêteur en France pour un crédit à la consommation ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "En France, les obligations d'information précontractuelle d'un prêteur pour un crédit à la consommation sont régies par le Code de la consommation. Voici les principales obligations :\n\n1. **Information préalable** : Le prêteur doit fournir au consommateur une information claire, compréhensible et non équivoque sur les caractéristiques essentielles du crédit, avant la conclusion du contrat. Cela inclut :\n   - Le montant total du crédit.\n   - Le taux d'intérêt effectif global (TAEG).\n   - Les modalités de remboursement (montant et périodicité des échéances).\n   - Les frais et commissions éventuels.\n   - La durée totale du crédit.\n   - Les pénalités de remboursement anticipé.\n\n2. **Délai de rétractation** : Le consommateur dispose d'un délai de rétractation de 14 jours calendaires à compter de la signature du contrat ou de la réception du bien ou du service, sans avoir à justifier de motifs ni à payer de pénalités, sauf si le crédit est accordé pour l'achat d'un bien ou d'un service à exécution immédiate et d'un montant inférieur à 200 € hors taxes.\n\n3. **Information sur les droits** : Le prêteur doit informer le consommateur de ses droits, notamment le droit de rétractation et les modalités de résiliation du contrat.\n\n4. **Forme écrite** : Toutes ces informations doivent être fournies par écrit, de manière claire et lisible, avant la conclusion du contrat.\n\nCes obligations visent à protéger le consommateur en lui permettant de prendre une décision éclairée avant de s'engager dans un crédit à la consommation.",
+      "reference": "Le prêteur doit remettre à l'emprunteur une Fiche d'Information Précontractuelle Européenne Normalisée (FIPEN) avant la signature. Elle contient : identité du prêteur, montant total du crédit, durée, TAEG, montant total dû, nombre et montant des échéances, taux débiteur, frais, conséquences en cas de défaut. L'emprunteur dispose d'un délai de réflexion.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7399557759830384,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quelle est la durée minimale du droit de rétractation pour un crédit à la consommation en France ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "En France, la durée minimale du droit de rétractation pour un crédit à la consommation est de 14 jours calendaires. Ce délai commence à courir à partir du jour de la signature du contrat ou de la réception du dernier document nécessaire à la conclusion du contrat, si ce dernier est postérieur. Ce droit est prévu par le Code de la consommation.",
+      "reference": "L'emprunteur dispose d'un droit de rétractation de 14 jours calendaires à compter de la signature du contrat de crédit à la consommation, sans avoir à se justifier et sans pénalités.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.77532704008773,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Un dossier de crédit refusé peut-il être représenté auprès d'une autre banque sans mention de refus ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Un dossier de crédit refusé peut généralement être représenté auprès d'une autre banque, mais il est important de comprendre que les banques partagent souvent des informations via des fichiers de crédit comme le Fichier National des Incidents de Paiement (FICP) en France. Si votre dossier a été refusé en raison d'un incident de paiement ou d'un autre problème signalé au FICP, cette information pourrait être visible par d'autres établissements financiers.\n\nCependant, si le refus n'est pas lié à un incident de paiement ou à une mention au FICP, mais plutôt à des critères internes de la banque (comme le taux d'endettement ou le montant du crédit demandé), il est possible que cette information ne soit pas partagée avec d'autres banques.\n\nPour maximiser vos chances de succès, il est conseillé de corriger les éventuels problèmes qui ont conduit au refus initial, comme régulariser des dettes ou améliorer votre situation financière. De plus, il peut être utile de demander une explication écrite du refus pour comprendre les raisons précises et voir comment les aborder lors de votre demande auprès d'une autre banque.\n\nEnfin, il est toujours possible de demander à la banque qui a refusé votre dossier de ne pas mentionner le refus dans le FICP, si cela est applicable, bien que cela dépende des circonstances spécifiques de votre dossier.",
+      "reference": "Oui, chaque banque instruit indépendamment le dossier et il n'existe pas en France de fichier centralisé des refus de crédit (contrairement au FICP qui recense les incidents de paiement). L'emprunteur n'a pas d'obligation légale de déclarer un refus antérieur. Toutefois, la banque peut consulter le FICP et la Banque de France pour les incidents, et peut poser la question dans son questionnaire.",
+      "faithfulness": 0.5714285714285714,
+      "answer_relevancy": 0.6137102914847609,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Un co-emprunteur a-t-il les mêmes droits et obligations que l'emprunteur principal ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Oui, un co-emprunteur a généralement les mêmes droits et obligations que l'emprunteur principal. Cela signifie que le co-emprunteur est également responsable du remboursement du prêt et des intérêts associés. En cas de défaut de paiement, le prêteur peut demander le remboursement à l'un ou l'autre des emprunteurs. De plus, le co-emprunteur a le droit de participer aux décisions concernant le prêt, comme les remboursements anticipés ou les renégociations de conditions. Cependant, il est important de consulter les conditions spécifiques du contrat de prêt, car certaines dispositions peuvent varier.",
+      "reference": "Oui, le co-emprunteur est solidairement responsable du remboursement du crédit, au même titre que l'emprunteur principal. En cas de défaut, la banque peut demander le remboursement intégral à l'un ou l'autre. Les deux signatures ont la même valeur juridique. La distinction entre emprunteur principal et co-emprunteur est administrative, pas juridique.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.587498499427245,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Quelle sera l'évolution du taux directeur de la BCE en 2027 ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Je suis désolé, mais je ne peux pas prédire l'évolution du taux directeur de la Banque centrale européenne (BCE) en 2027. Les décisions concernant les taux d'intérêt dépendent de nombreux facteurs économiques et financiers qui évoluent constamment. Elles sont prises par le Conseil des gouverneurs de la BCE en fonction de l'évolution de l'inflation, de la croissance économique et d'autres indicateurs économiques. Pour des prévisions, il est conseillé de consulter des analyses économiques ou des rapports de prévision émis par des institutions financières ou des experts en économie.",
+      "reference": "Je ne peux pas prédire l'évolution future des taux directeurs de la BCE. Ces décisions dépendent de la conjoncture économique, de l'inflation et de la politique monétaire européenne, qui évoluent en continu. Pour des projections à jour, je vous invite à consulter les publications de la BCE, les analyses de la Banque de France, ou les notes de conjoncture économique récentes.",
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Devrais-je accepter cette offre de crédit de 15 000 EUR à 6% TAEG ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Pour évaluer si vous devriez accepter cette offre de crédit de 15 000 EUR à 6% TAEG (Taux Annuel Effectif Global), plusieurs facteurs doivent être pris en compte :\n\n1. **Comparaison des taux** : Comparez ce taux avec ceux proposés par d'autres établissements financiers. Un taux de 6% TAEG peut être compétitif, mais cela dépend des conditions actuelles du marché.\n\n2. **Durée du crédit** : La durée du remboursement affecte le coût total du crédit. Plus la durée est longue, plus les intérêts cumulés seront élevés.\n\n3. **Montant des mensualités** : Assurez-vous que les mensualités sont dans vos moyens financiers. Utilisez un simulateur de crédit pour estimer vos mensualités.\n\n4. **Frais annexes** : Vérifiez s'il y a des frais supplémentaires (assurance, frais de dossier, etc.) qui pourraient augmenter le coût total du crédit.\n\n5. **Flexibilité** : Vérifiez si le crédit offre des options de remboursement anticipé sans pénalités.\n\n6. **Objectif du crédit** : Assurez-vous que le crédit répond à vos besoins et que vous avez un plan pour rembourser.\n\nSi vous avez des doutes, il peut être utile de consulter un conseiller financier.",
+      "reference": "Je ne peux pas vous conseiller d'accepter ou de refuser une offre de crédit personnelle. Cette décision dépend de votre situation financière globale, de vos autres engagements, du projet financé et de votre capacité de remboursement. Je vous recommande de consulter un conseiller financier, votre banquier, ou d'utiliser un simulateur officiel comme celui de la Banque de France.",
+      "faithfulness": 0.8888888888888888,
+      "answer_relevancy": 0.7539927827271934,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Qu'est-ce que le FICP et dans quels cas est-on inscrit ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Le FICP (Fichier des Incidents de Paiement des Crédits aux Particuliers) est un fichier national qui recense les incidents de paiement des particuliers. L'inscription au FICP peut avoir des conséquences sur l'accès au crédit, car les organismes prêteurs y consultent les informations avant d'accorder un prêt.\n\nOn peut être inscrit au FICP dans les cas suivants :\n\n1. **Retard de paiement** : Si vous êtes en retard de plus de 2 mois sur le remboursement d'un crédit (crédit renouvelable, crédit à la consommation, prêt immobilier, etc.).\n\n2. **Procédure de recouvrement** : Si une procédure de recouvrement est engagée contre vous, même si vous n'êtes pas encore en retard de paiement.\n\n3. **Procédure de surendettement** : Si vous êtes en cours de traitement d'une procédure de surendettement.\n\n4. **Procédure de saisie** : Si une saisie a été engagée sur vos biens.\n\n5. **Procédure de redressement ou de liquidation judiciaire** : Si vous êtes concerné par une telle procédure.\n\n6. **Procédure de rétablissement personnel** : Si vous êtes en cours de traitement de cette procédure.\n\nL'inscription au FICP est automatique et ne nécessite pas votre consentement. Elle est effectuée par les créanciers qui ont recours à un mandataire pour la saisie des informations. L'inscription dure généralement 5 ans, mais peut être prolongée en cas de nouvelle défaillance. Pour être radié du FICP, il faut que le créancier concerné retire sa déclaration d'incident de paiement.",
+      "reference": "Le Fichier des Incidents de remboursement des Crédits aux Particuliers (FICP) est géré par la Banque de France. Il recense les incidents de paiement caractérisés sur les crédits aux particuliers (consommation, immobilier, découvert). L'inscription dure 5 ans maximum pour les incidents de paiement, 7 ans pour les mesures de surendettement. La régularisation entraîne la radiation.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6289793287055073,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Peut-on cumuler une assurance emprunteur groupe et une délégation d'assurance ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Oui, il est possible de cumuler une assurance emprunteur groupe et une délégation d'assurance. L'assurance emprunteur groupe est celle proposée par la banque ou l'établissement prêteur, souvent incluse dans l'offre de crédit. La délégation d'assurance, quant à elle, vous permet de choisir une assurance externe auprès d'un autre assureur, souvent pour bénéficier de conditions plus avantageuses.\n\nCependant, il est important de vérifier les conditions de votre contrat de prêt. Certaines banques peuvent exiger que l'assurance soit souscrite auprès d'elles, ou imposer des pénalités si vous choisissez une délégation d'assurance. Il est donc conseillé de bien lire les termes de votre contrat et de discuter avec votre banque avant de procéder à une délégation d'assurance.",
+      "reference": "Non, il n'y a qu'un seul contrat d'assurance emprunteur par crédit. L'emprunteur choisit entre le contrat groupe proposé par la banque et une délégation d'assurance (contrat individuel externe), à condition que les garanties soient équivalentes. Depuis la loi Lemoine (2022), l'emprunteur peut changer d'assurance à tout moment sans frais ni pénalités.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.9026379199249407,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Calcule le coût total d'un crédit de 25 000 EUR sur 60 mois à 5.2% TAEG avec une assurance de 0.3% par an sur le capital initial.",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "Pour calculer le coût total du crédit, nous devons prendre en compte à la fois les intérêts du prêt et les coûts de l'assurance.\n\n1. **Calcul des intérêts du prêt :**\n\n   Le TAEG (Taux Annuel Effectif Global) inclut déjà les intérêts et les frais annexes. Pour un prêt de 25 000 EUR sur 60 mois à un TAEG de 5,2%, nous pouvons utiliser la formule du paiement d'un crédit amortissable pour trouver le montant des mensualités :\n\n   \\[\n   M = \\frac{P \\times r \\times (1 + r)^n}{(1 + r)^n - 1}\n   \\]\n\n   où :\n   - \\( M \\) est le montant de la mensualité,\n   - \\( P \\) est le capital emprunté (25 000 EUR),\n   - \\( r \\) est le taux d'intérêt mensuel (TAEG/12 = 5,2%/12 = 0,004333),\n   - \\( n \\) est le nombre de mensualités (60).\n\n   \\[\n   M = \\frac{25000 \\times 0,004333 \\times (1 + 0,004333)^{60}}{(1 + 0,004333)^{60} - 1} \\approx 477,42 \\, \\text{EUR}\n   \\]\n\n   Le coût total des mensualités sur 60 mois est donc :\n\n   \\[\n   477,42 \\times 60 = 28\\,645,20 \\, \\text{EUR}\n   \\]\n\n   Le coût total des intérêts est donc :\n\n   \\[\n   28\\,645,20 - 25\\,000 = 3\\,645,20 \\, \\text{EUR}\n   \\]\n\n2. **Calcul des coûts de l'assurance :**\n\n   L'assurance coûte 0,3% par an sur le capital initial de 25 000 EUR. Sur 5 ans, cela donne :\n\n   \\[\n   25\\,000 \\times 0,003 \\times 5 = 375 \\, \\text{EUR}\n   \\]\n\n3. **Coût total du crédit :**\n\n   En additionnant les coûts des intérêts et ceux de l'assurance, nous obtenons le coût total du crédit :\n\n   \\[\n   3\\,645,20 + 375 = 4\\,020,20 \\, \\text{EUR}\n   \\]\n\nAinsi, le coût total du crédit est de 4 020,20 EUR.",
+      "reference": "Mensualité hors assurance : environ 474.68 EUR. Assurance mensuelle : 25 000 × 0.003 / 12 = 6.25 EUR. Mensualité totale : environ 480.93 EUR. Coût total du crédit sur 60 mois : 60 × 480.93 = 28 855.80 EUR, soit un coût total hors capital de 3 855.80 EUR (dont environ 375 EUR d'assurance).",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6096308013821338,
+      "context_precision": 0.0,
+      "context_recall": 0.25
+    },
+    {
+      "user_input": "Quelle est la différence entre un crédit affecté et un crédit non affecté ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "La différence principale entre un crédit affecté et un crédit non affecté réside dans l'utilisation des fonds empruntés :\n\n1. **Crédit affecté** : Ce type de crédit est destiné à un achat ou un projet spécifique. Les fonds doivent être utilisés uniquement pour l'objet du crédit. Par exemple, un crédit affecté pour l'achat d'une voiture doit être utilisé pour acheter cette voiture. Si les fonds ne sont pas utilisés pour l'objet prévu, le crédit peut être annulé.\n\n2. **Crédit non affecté** : Contrairement au crédit affecté, les fonds d'un crédit non affecté peuvent être utilisés librement par l'emprunteur, sans restriction spécifique. Cela offre plus de flexibilité, mais il est important de bien gérer ces fonds pour éviter de se retrouver dans une situation financière difficile.\n\nEn résumé, le crédit affecté est lié à un projet spécifique, tandis que le crédit non affecté offre plus de liberté d'utilisation.",
+      "reference": "Un crédit affecté est lié à l'achat d'un bien ou service identifié dans le contrat (voiture, travaux). Si la vente est annulée, le crédit l'est aussi. Un crédit non affecté (prêt personnel) est libre d'usage et indépendant d'un achat précis. Les conditions, taux et obligations d'information diffèrent selon le type.",
+      "faithfulness": 0.6,
+      "answer_relevancy": 0.8584628692259274,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Je viens d'être licencié, puis-je demander le report de mes mensualités de crédit à la consommation ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "En France, le report des mensualités de crédit à la consommation est possible, mais cela dépend des conditions spécifiques de votre contrat de crédit. Voici quelques points à considérer :\n\n1. **Clause de report** : Vérifiez si votre contrat de crédit inclut une clause permettant le report des mensualités en cas de difficultés financières. Si c'est le cas, vous pouvez en bénéficier selon les modalités prévues.\n\n2. **Négociation avec l'organisme prêteur** : Si votre contrat ne prévoit pas explicitement cette possibilité, vous pouvez contacter votre organisme prêteur pour discuter d'une éventuelle suspension ou report des mensualités. Les banques et organismes de crédit peuvent parfois accorder une tolérance temporaire en cas de licenciement.\n\n3. **Assurance de prêt** : Si vous avez souscrit une assurance de prêt couvrant les risques de perte d'emploi, elle pourrait prendre en charge vos mensualités pendant une période définie.\n\n4. **Délai de carence** : Certaines assurances ou accords de report peuvent comporter un délai de carence avant d'entrer en vigueur. Assurez-vous de bien comprendre ces conditions.\n\n5. **Conséquences** : Soyez conscient que le report des mensualités peut entraîner une augmentation du coût total du crédit, car les intérêts continuent de courir pendant la période de report.\n\nIl est recommandé de contacter directement votre organisme prêteur pour discuter de votre situation et des options disponibles.",
+      "reference": "Oui, en cas de difficultés financières (perte d'emploi, baisse de revenus), vous pouvez demander à votre prêteur un report ou un rééchelonnement des mensualités. Beaucoup de contrats prévoient cette possibilité. Si la banque refuse ou si la situation s'aggrave, vous pouvez saisir la commission de surendettement de la Banque de France. L'assurance emprunteur peut aussi couvrir la perte d'emploi si cette garantie a été souscrite.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6853974897666172,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    }
+  ]
+}

@@ -8,6 +8,10 @@ Loads golden_dataset.jsonl, runs the specified pipeline against each
 question, computes Ragas metrics, saves JSON and Markdown reports in
 eval/results/.
 """
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import argparse
 import importlib
 import json
@@ -32,6 +36,7 @@ from ragas.metrics import (
 from ragas.llms import LangchainLLMWrapper
 from ragas.embeddings import LangchainEmbeddingsWrapper
 from langchain_ollama import ChatOllama, OllamaEmbeddings
+from src.observability.langfuse_helper import flush as langfuse_flush
 
 ROOT = Path(__file__).parent
 DATASET_PATH = ROOT / "golden_dataset.jsonl"
@@ -107,6 +112,8 @@ def run_evaluation(pipeline_name: str) -> dict:
         from src.pipelines.baseline import run_baseline as pipeline_fn
     elif pipeline_name == "naive_rag":
         from src.pipelines.naive_rag import run_naive_rag as pipeline_fn
+    elif pipeline_name == "advanced_rag":
+        from src.pipelines.advanced_rag import run_advanced_rag as pipeline_fn
     else:
         pipeline_module = importlib.import_module(f"src.pipelines.{pipeline_name}")
         pipeline_fn = getattr(pipeline_module, f"run_{pipeline_name}")
@@ -224,7 +231,7 @@ def main():
     sys.path.insert(0, str(Path(__file__).parent.parent))
 
     results = run_evaluation(args.pipeline)
-
+    langfuse_flush()
     print(f"\n=== Summary ===")
     for metric, value in results["scores_summary"].items():
         v = f"{value:.3f}" if value is not None else "N/A"
