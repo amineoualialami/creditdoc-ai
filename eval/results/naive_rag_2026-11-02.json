@@ -1,0 +1,197 @@
+{
+  "pipeline": "naive_rag",
+  "timestamp": "2026-11-02T15:43:22.369508Z",
+  "n_entries": 15,
+  "scores_summary": {
+    "faithfulness": 0.09090909090909091,
+    "answer_relevancy": 0.3587052531531094,
+    "context_precision": 0.06333333333175,
+    "context_recall": 0.4611111111111111
+  },
+  "scores_per_entry": [
+    {
+      "user_input": "Quelle est la différence entre un TAEG et un TEG ?",
+      "retrieved_contexts": [
+        "# TAEG, taux effectif et taux d'usure **Source** : Code de la consommation (Légifrance) — Livre III, Titre I, Chapitre IV **URL de référence** : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006069565 > Définition et mode de calcul du taux annuel effectif global (TAEG) ; notion de taux d'usure publié trimestriellement par la Banque de France ; sanctions en cas de dépassement du taux d'usure. --- ## Article L314-1 Dans tous les cas, pour la détermination du taux effectif global du prêt, comme pour",
+        "## Couverture par rapport au golden dataset Chaque document a été sélectionné pour couvrir les catégories de questions du golden dataset : - **definition** → 01, 05 (TAEG), 07 (taux d'effort) - **calculation** → 05 (TAEG, taux d'usure), 07 (35%) - **regulatory** → 02 (FICP, FISE), 06 (délai de réflexion 10 jours), 07 (contraintes HCSF) - **nuanced** → 03 (rétractation vs annulation), 04 (crédit renouvelable), 06 (remboursement anticipé immobilier) - **out_of_scope** → aucun contenu dédié (c'est voulu : le",
+        "et frais à venir jusqu'à la date de la révision du taux, ainsi que les conditions et modalités de variation du taux. L'emprunteur dispose d'un délai de réflexion de dix jours à compter de la réception des informations mentionnées au deuxième alinéa. L'acceptation doit être donnée par lettre, le cachet de l'opérateur postal faisant foi, ou selon tout autre moyen convenu entre les parties de nature à rendre certaine la date de l'acceptation par l'emprunteur. *Source : https://www.legifrance.gouv.fr/codes/art",
+        "(texte intégral) : https://www.economie.gouv.fr/files/files/directions_services/hcsf/D-HCSF-2021-7%20signée.pdf*",
+        "idé le 29 septembre 2021 de rendre contraignants ces critères, afin d'assurer la pérennité des bonnes pratiques d'octroi. --- ## Les deux critères contraignants La décision du HCSF du 29 septembre 2021 relative aux conditions d'octroi de crédits immobiliers établit **deux critères que les établissements de crédit doivent appliquer** en matière de crédit immobilier : 1. **Taux d'effort** : le taux d'effort des emprunteurs, c'est-à-dire le ratio de leurs charges d'emprunt sur leur revenu, ne doit pas excéder"
+      ],
+      "response": "Les documents de référence consultés ne traitent pas spécifiquement de la différence entre un TAEG et un TEG. \n\nLe TAEG (Taux Annuel Effectif Global) est mentionné dans le contexte comme étant défini et calculé selon le Code de la consommation, incluant les frais et intérêts sur un prêt [Source 1]. Cependant, il n'y a pas de mention explicite du TEG (Taux Effectif Global) dans le contexte fourni.\n\nPour des informations précises et complètes, il est recommandé de consulter une source officielle comme le Code de la consommation ou un conseiller professionnel.",
+      "reference": "Le TAEG (Taux Annuel Effectif Global) a remplacé le TEG depuis 2016 pour les crédits à la consommation. Il inclut tous les frais obligatoires du crédit : intérêts, assurance, frais de dossier et autres frais imposés à l'emprunteur. Le TEG, ancienne appellation, couvrait un périmètre plus restreint.",
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.94999999997625,
+      "context_recall": 0.6666666666666666
+    },
+    {
+      "user_input": "Qu'est-ce que le ratio d'endettement maximum en France pour un prêt immobilier ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Le Haut Conseil de Stabilité Financière (HCSF) a fixé le taux d'effort maximum à 35% des revenus nets de l'emprunteur, assurance incluse, pour les prêts immobiliers. Cette règle est en vigueur depuis janvier 2022. Les banques peuvent y déroger pour 20% de leur production trimestrielle.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.37518253582580946,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Pour un prêt de 10 000 EUR sur 24 mois à 4.5% TAEG, calcule la mensualité constante.",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "La mensualité constante est d'environ 436.07 EUR. Formule : M = C × t / (1 - (1 + t)^-n), avec C = 10 000, t = 0.045/12 = 0.00375, n = 24. Coût total du crédit : environ 465.68 EUR d'intérêts.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.3477170852730889,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Un emprunteur gagne 3500 EUR nets par mois. Quel est le montant maximum de mensualités de crédit qu'il peut assumer selon la règle du 35% ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Selon la règle HCSF du taux d'effort à 35%, les mensualités totales de crédit (y compris assurance emprunteur) ne doivent pas dépasser 1 225 EUR par mois (3 500 × 0.35).",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.3661533308389122,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quelles sont les obligations d'information précontractuelle d'un prêteur en France pour un crédit à la consommation ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Le prêteur doit remettre à l'emprunteur une Fiche d'Information Précontractuelle Européenne Normalisée (FIPEN) avant la signature. Elle contient : identité du prêteur, montant total du crédit, durée, TAEG, montant total dû, nombre et montant des échéances, taux débiteur, frais, conséquences en cas de défaut. L'emprunteur dispose d'un délai de réflexion.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.40854383076459877,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quelle est la durée minimale du droit de rétractation pour un crédit à la consommation en France ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "L'emprunteur dispose d'un droit de rétractation de 14 jours calendaires à compter de la signature du contrat de crédit à la consommation, sans avoir à se justifier et sans pénalités.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.40583826443957577,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Un dossier de crédit refusé peut-il être représenté auprès d'une autre banque sans mention de refus ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Oui, chaque banque instruit indépendamment le dossier et il n'existe pas en France de fichier centralisé des refus de crédit (contrairement au FICP qui recense les incidents de paiement). L'emprunteur n'a pas d'obligation légale de déclarer un refus antérieur. Toutefois, la banque peut consulter le FICP et la Banque de France pour les incidents, et peut poser la question dans son questionnaire.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.39509707164065383,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Un co-emprunteur a-t-il les mêmes droits et obligations que l'emprunteur principal ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Oui, le co-emprunteur est solidairement responsable du remboursement du crédit, au même titre que l'emprunteur principal. En cas de défaut, la banque peut demander le remboursement intégral à l'un ou l'autre. Les deux signatures ont la même valeur juridique. La distinction entre emprunteur principal et co-emprunteur est administrative, pas juridique.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.39064033655368996,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Quelle sera l'évolution du taux directeur de la BCE en 2027 ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Je ne peux pas prédire l'évolution future des taux directeurs de la BCE. Ces décisions dépendent de la conjoncture économique, de l'inflation et de la politique monétaire européenne, qui évoluent en continu. Pour des projections à jour, je vous invite à consulter les publications de la BCE, les analyses de la Banque de France, ou les notes de conjoncture économique récentes.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.43804193913775413,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Devrais-je accepter cette offre de crédit de 15 000 EUR à 6% TAEG ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Je ne peux pas vous conseiller d'accepter ou de refuser une offre de crédit personnelle. Cette décision dépend de votre situation financière globale, de vos autres engagements, du projet financé et de votre capacité de remboursement. Je vous recommande de consulter un conseiller financier, votre banquier, ou d'utiliser un simulateur officiel comme celui de la Banque de France.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.3831016509815555,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Qu'est-ce que le FICP et dans quels cas est-on inscrit ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Le Fichier des Incidents de remboursement des Crédits aux Particuliers (FICP) est géré par la Banque de France. Il recense les incidents de paiement caractérisés sur les crédits aux particuliers (consommation, immobilier, découvert). L'inscription dure 5 ans maximum pour les incidents de paiement, 7 ans pour les mesures de surendettement. La régularisation entraîne la radiation.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.337518897741435,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Peut-on cumuler une assurance emprunteur groupe et une délégation d'assurance ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Non, il n'y a qu'un seul contrat d'assurance emprunteur par crédit. L'emprunteur choisit entre le contrat groupe proposé par la banque et une délégation d'assurance (contrat individuel externe), à condition que les garanties soient équivalentes. Depuis la loi Lemoine (2022), l'emprunteur peut changer d'assurance à tout moment sans frais ni pénalités.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.37440980852488565,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Calcule le coût total d'un crédit de 25 000 EUR sur 60 mois à 5.2% TAEG avec une assurance de 0.3% par an sur le capital initial.",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Mensualité hors assurance : environ 474.68 EUR. Assurance mensuelle : 25 000 × 0.003 / 12 = 6.25 EUR. Mensualité totale : environ 480.93 EUR. Coût total du crédit sur 60 mois : 60 × 480.93 = 28 855.80 EUR, soit un coût total hors capital de 3 855.80 EUR (dont environ 375 EUR d'assurance).",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.3679086638117603,
+      "context_precision": 0.0,
+      "context_recall": 0.25
+    },
+    {
+      "user_input": "Quelle est la différence entre un crédit affecté et un crédit non affecté ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Un crédit affecté est lié à l'achat d'un bien ou service identifié dans le contrat (voiture, travaux). Si la vente est annulée, le crédit l'est aussi. Un crédit non affecté (prêt personnel) est libre d'usage et indépendant d'un achat précis. Les conditions, taux et obligations d'information diffèrent selon le type.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.391724137536906,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Je viens d'être licencié, puis-je demander le report de mes mensualités de crédit à la consommation ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Oui, en cas de difficultés financières (perte d'emploi, baisse de revenus), vous pouvez demander à votre prêteur un report ou un rééchelonnement des mensualités. Beaucoup de contrats prévoient cette possibilité. Si la banque refuse ou si la situation s'aggrave, vous pouvez saisir la commission de surendettement de la Banque de France. L'assurance emprunteur peut aussi couvrir la perte d'emploi si cette garantie a été souscrite.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.39870124422601533,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    }
+  ]
+}

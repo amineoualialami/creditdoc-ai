@@ -224,6 +224,7 @@ def run_advanced_rag(question: str) -> Dict[str, Any]:
         api_base=OLLAMA_BASE,
         messages=messages,
         temperature=0.2,
+        timeout=1600,
     )
     answer = response.choices[0].message.content
     usage = {

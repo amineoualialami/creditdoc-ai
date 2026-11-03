@@ -1,0 +1,213 @@
+{
+  "pipeline": "advanced_rag",
+  "timestamp": "2026-11-02T18:59:57.868413Z",
+  "n_entries": 15,
+  "scores_summary": {
+    "faithfulness": 0.20202020202020202,
+    "answer_relevancy": 0.505221291372877,
+    "context_precision": 0.2544444444373796,
+    "context_recall": 0.5222222222222223
+  },
+  "scores_per_entry": [
+    {
+      "user_input": "Quelle est la différence entre un TAEG et un TEG ?",
+      "retrieved_contexts": [
+        "# TAEG, taux effectif et taux d'usure **Source** : Code de la consommation (Légifrance) — Livre III, Titre I, Chapitre IV **URL de référence** : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006069565 > Définition et mode de calcul du taux annuel effectif global (TAEG) ; notion de taux d'usure publié trimestriellement par la Banque de France ; sanctions en cas de dépassement du taux d'usure. --- ## Article L314-1 Dans tous les cas, pour la détermination du taux effectif global du prêt, comme pour",
+        "## Couverture par rapport au golden dataset Chaque document a été sélectionné pour couvrir les catégories de questions du golden dataset : - **definition** → 01, 05 (TAEG), 07 (taux d'effort) - **calculation** → 05 (TAEG, taux d'usure), 07 (35%) - **regulatory** → 02 (FICP, FISE), 06 (délai de réflexion 10 jours), 07 (contraintes HCSF) - **nuanced** → 03 (rétractation vs annulation), 04 (crédit renouvelable), 06 (remboursement anticipé immobilier) - **out_of_scope** → aucun contenu dédié (c'est voulu : le",
+        "| `05-taeg-taux-usure.md` | TAEG, taux effectif global, taux d'usure | Code de la conso | L314-1 à L314-11 | ~6 KB | | `06-credit-immobilier.md` | Crédit immobilier (champ, FISE, délai de réflexion, remboursement anticipé) | Code de la conso | L313-1 à L313-41 | ~14 KB | | `07-hcsf-credit-immobilier.md` | **HCSF : règles 35% / 25 ans** | HCSF / economie.gouv.fr | Décisions D-HCSF-2021-7, 2023-2, 2023-6 | ~4 KB | **Total** : ~60 KB, 7 documents. ## Couverture par rapport au golden dataset Chaque document a é",
+        "4 | ~10 KB | | `02-credit-conso-publicite-info.md` | Publicité, information précontractuelle, FISE, FICP | Code de la conso | L312-5 à L312-16 | ~10 KB | | `03-credit-conso-formation-retractation.md` | Formation du contrat, rétractation 14 jours, délai 7 jours | Code de la conso | L312-18 à L312-28 | ~6 KB | | `04-credit-renouvelable.md` | Crédit renouvelable (durée, remboursement, information) | Code de la conso | L312-57 à L312-73 | ~10 KB | | `05-taeg-taux-usure.md` | TAEG, taux effectif global, taux d'u",
+        "le (soit **6 % de la production trimestrielle**, contre 4 % précédemment) sont libres d'utilisation. --- ## Définitions essentielles - **Taux d'effort** : ratio des charges totales d'emprunt sur les revenus de l'emprunteur. Les charges incluent le remboursement de capital, les intérêts et l'assurance emprunteur. - **Maturité du crédit** : durée totale du contrat de crédit, exprimée en années. - **Différé d'amortissement** : période pendant laquelle l'emprunteur ne rembourse pas le capital (il peut ne payer"
+      ],
+      "response": "Les documents de référence consultés ne traitent pas spécifiquement de la différence entre un TAEG et un TEG. Cependant, [Hors sources] le TAEG (Taux Annuel Effectif Global) est un taux qui inclut tous les coûts liés à un crédit (intérêts, frais de dossier, assurance, etc.) et est obligatoire pour les prêts à la consommation en France. Le TEG (Taux Effectif Global) est un terme plus général qui peut être utilisé dans d'autres contextes de crédit, mais il est souvent synonyme de TAEG dans le cadre des prêts à la consommation. Pour des informations précises et à jour, il est recommandé de consulter une source officielle comme le Code de la consommation ou un conseiller professionnel.",
+      "reference": "Le TAEG (Taux Annuel Effectif Global) a remplacé le TEG depuis 2016 pour les crédits à la consommation. Il inclut tous les frais obligatoires du crédit : intérêts, assurance, frais de dossier et autres frais imposés à l'emprunteur. Le TEG, ancienne appellation, couvrait un périmètre plus restreint.",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8477436245187674,
+      "context_precision": 0.94999999997625,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Qu'est-ce que le ratio d'endettement maximum en France pour un prêt immobilier ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Le Haut Conseil de Stabilité Financière (HCSF) a fixé le taux d'effort maximum à 35% des revenus nets de l'emprunteur, assurance incluse, pour les prêts immobiliers. Cette règle est en vigueur depuis janvier 2022. Les banques peuvent y déroger pour 20% de leur production trimestrielle.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.3747559753179663,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Pour un prêt de 10 000 EUR sur 24 mois à 4.5% TAEG, calcule la mensualité constante.",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "La mensualité constante est d'environ 436.07 EUR. Formule : M = C × t / (1 - (1 + t)^-n), avec C = 10 000, t = 0.045/12 = 0.00375, n = 24. Coût total du crédit : environ 465.68 EUR d'intérêts.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.3264194098096291,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Un emprunteur gagne 3500 EUR nets par mois. Quel est le montant maximum de mensualités de crédit qu'il peut assumer selon la règle du 35% ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Selon la règle HCSF du taux d'effort à 35%, les mensualités totales de crédit (y compris assurance emprunteur) ne doivent pas dépasser 1 225 EUR par mois (3 500 × 0.35).",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.3581996071596915,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quelles sont les obligations d'information précontractuelle d'un prêteur en France pour un crédit à la consommation ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Le prêteur doit remettre à l'emprunteur une Fiche d'Information Précontractuelle Européenne Normalisée (FIPEN) avant la signature. Elle contient : identité du prêteur, montant total du crédit, durée, TAEG, montant total dû, nombre et montant des échéances, taux débiteur, frais, conséquences en cas de défaut. L'emprunteur dispose d'un délai de réflexion.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.40026167620527775,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quelle est la durée minimale du droit de rétractation pour un crédit à la consommation en France ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "L'emprunteur dispose d'un droit de rétractation de 14 jours calendaires à compter de la signature du contrat de crédit à la consommation, sans avoir à se justifier et sans pénalités.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.3851207315369409,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Un dossier de crédit refusé peut-il être représenté auprès d'une autre banque sans mention de refus ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Oui, chaque banque instruit indépendamment le dossier et il n'existe pas en France de fichier centralisé des refus de crédit (contrairement au FICP qui recense les incidents de paiement). L'emprunteur n'a pas d'obligation légale de déclarer un refus antérieur. Toutefois, la banque peut consulter le FICP et la Banque de France pour les incidents, et peut poser la question dans son questionnaire.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.4283911848691047,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Un co-emprunteur a-t-il les mêmes droits et obligations que l'emprunteur principal ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Oui, le co-emprunteur est solidairement responsable du remboursement du crédit, au même titre que l'emprunteur principal. En cas de défaut, la banque peut demander le remboursement intégral à l'un ou l'autre. Les deux signatures ont la même valeur juridique. La distinction entre emprunteur principal et co-emprunteur est administrative, pas juridique.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.3816966909951975,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Quelle sera l'évolution du taux directeur de la BCE en 2027 ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Je ne peux pas prédire l'évolution future des taux directeurs de la BCE. Ces décisions dépendent de la conjoncture économique, de l'inflation et de la politique monétaire européenne, qui évoluent en continu. Pour des projections à jour, je vous invite à consulter les publications de la BCE, les analyses de la Banque de France, ou les notes de conjoncture économique récentes.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.42944038824331837,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Devrais-je accepter cette offre de crédit de 15 000 EUR à 6% TAEG ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Je ne peux pas vous conseiller d'accepter ou de refuser une offre de crédit personnelle. Cette décision dépend de votre situation financière globale, de vos autres engagements, du projet financé et de votre capacité de remboursement. Je vous recommande de consulter un conseiller financier, votre banquier, ou d'utiliser un simulateur officiel comme celui de la Banque de France.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.40770348878762136,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Qu'est-ce que le FICP et dans quels cas est-on inscrit ?",
+      "retrieved_contexts": [
+        ""
+      ],
+      "response": "[ERROR: timed out]",
+      "reference": "Le Fichier des Incidents de remboursement des Crédits aux Particuliers (FICP) est géré par la Banque de France. Il recense les incidents de paiement caractérisés sur les crédits aux particuliers (consommation, immobilier, découvert). L'inscription dure 5 ans maximum pour les incidents de paiement, 7 ans pour les mesures de surendettement. La régularisation entraîne la radiation.",
+      "faithfulness": NaN,
+      "answer_relevancy": 0.3198494053303675,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Peut-on cumuler une assurance emprunteur groupe et une délégation d'assurance ?",
+      "retrieved_contexts": [
+        "nt de tout acompte ; 6° Le montant total dû par l'emprunteur et le montant des échéances. Si le prêteur exige qu'un service accessoire soit fourni pour l'obtention du crédit, notamment une assurance, la publicité mentionne de façon claire, précise et visible la nécessité de contracter ce service. *Source : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226196* --- ## Article L312-7 Lorsqu'un prêteur propose habituellement des contrats de crédit assortis d'une proposition d'assurance ayant pou",
+        "onformément aux articles L. 314-1 à L. 314-4 ainsi que, s'il y a lieu, les modalités de l'indexation ; 6° Enonce, en donnant une évaluation de leur coût, les stipulations, les assurances et les sûretés réelles ou personnelles exigées, qui conditionnent la conclusion du prêt ; 7° Mentionne que l'emprunteur peut souscrire auprès de l'assureur de son choix une assurance dans les conditions fixées aux articles L. 313-29 et L. 313-30 et précise les documents que doit contenir la demande de substitution ; 8° Fait",
+        "une assurance, le prêteur ou l'intermédiaire de crédit informe l'emprunteur du coût de l'assurance en portant à sa connaissance les éléments mentionnés à l'article L. 312-7. *Source : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731440* --- ## Article L312-13 A la demande de l'emprunteur, le prêteur lui fournit sans frais, s'il est disposé à lui consentir un crédit, outre les informations mentionnées à l'article L. 312-12, un exemplaire de l'offre de contrat sur support papier ou tout autre",
+        "l'emprunteur de ce taux avec le taux annuel effectif global du crédit ; 2° En montant total dû en euros par l'emprunteur au titre de l'assurance sur la durée totale du prêt ; 3° En euros par mois. Il est précisé si ce montant s'ajoute ou non à l'échéance de remboursement du crédit. *Source : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226194* --- ## Article L312-8 Dans toute publicité écrite, quel que soit le support utilisé, les informations relatives au taux annuel effectif global, à sa",
+        "1° La date d'arrêté du relevé et la date du paiement ; 2° La fraction du capital disponible ; 3° Le montant de l'échéance, dont la part correspondant aux intérêts ; 4° Le taux de la période et le taux effectif global ; 5° Le cas échéant, le coût de l'assurance ; 6° La totalité des sommes exigibles ; 7° Le montant des remboursements déjà effectués depuis le dernier renouvellement, en faisant ressortir la part respective versée au titre du capital emprunté et celle versée au titre des intérêts et frais diver"
+      ],
+      "response": "Oui, il est possible de cumuler une assurance emprunteur groupe et une délégation d'assurance. Selon l'article L. 313-30 du Code de la consommation, l'emprunteur peut souscrire auprès de l'assureur de son choix une assurance dans les conditions fixées par la loi, ce qui inclut la possibilité de déléguer son assurance emprunteur tout en conservant l'assurance groupe proposée par l'établissement prêteur [Source 2 — 06-credit-immobilier.md].\n\nCependant, il est important de vérifier les conditions spécifiques de l'assurance groupe proposée par l'établissement prêteur, car certaines assurances groupes peuvent ne pas permettre la délégation d'assurance ou peuvent imposer des conditions particulières. Il est recommandé de consulter un conseiller professionnel ou de se référer aux documents contractuels pour plus de précisions.",
+      "reference": "Non, il n'y a qu'un seul contrat d'assurance emprunteur par crédit. L'emprunteur choisit entre le contrat groupe proposé par la banque et une délégation d'assurance (contrat individuel externe), à condition que les garanties soient équivalentes. Depuis la loi Lemoine (2022), l'emprunteur peut changer d'assurance à tout moment sans frais ni pénalités.",
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.9077117800697044,
+      "context_precision": 0.0,
+      "context_recall": 0.3333333333333333
+    },
+    {
+      "user_input": "Calcule le coût total d'un crédit de 25 000 EUR sur 60 mois à 5.2% TAEG avec une assurance de 0.3% par an sur le capital initial.",
+      "retrieved_contexts": [
+        "l'emprunteur de ce taux avec le taux annuel effectif global du crédit ; 2° En montant total dû en euros par l'emprunteur au titre de l'assurance sur la durée totale du prêt ; 3° En euros par mois. Il est précisé si ce montant s'ajoute ou non à l'échéance de remboursement du crédit. *Source : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226194* --- ## Article L312-8 Dans toute publicité écrite, quel que soit le support utilisé, les informations relatives au taux annuel effectif global, à sa",
+        "entant les conditions et modalités de variation du taux d'intérêt et d'un document d'information contenant une simulation de l'impact d'une variation de ce taux sur les mensualités, la durée du prêt et le coût total du crédit. Cette simulation ne constitue pas un engagement du prêteur à l'égard de l'emprunteur quant à l'évolution effective des taux d'intérêt pendant le prêt et à son impact sur les mensualités, la durée du prêt et le coût total du crédit. Le document d'information mentionne le caractère indi",
+        "| `05-taeg-taux-usure.md` | TAEG, taux effectif global, taux d'usure | Code de la conso | L314-1 à L314-11 | ~6 KB | | `06-credit-immobilier.md` | Crédit immobilier (champ, FISE, délai de réflexion, remboursement anticipé) | Code de la conso | L313-1 à L313-41 | ~14 KB | | `07-hcsf-credit-immobilier.md` | **HCSF : règles 35% / 25 ans** | HCSF / economie.gouv.fr | Décisions D-HCSF-2021-7, 2023-2, 2023-6 | ~4 KB | **Total** : ~60 KB, 7 documents. ## Couverture par rapport au golden dataset Chaque document a é",
+        "nant comprend, d'une part, un échéancier des amortissements détaillant pour chaque échéance le capital restant dû en cas de remboursement anticipé et, d'autre part, le taux annuel effectif global ainsi que le coût du crédit, calculés sur la base des seuls échéances et frais à venir. Pour les prêts à taux variable ou révisable, l'avenant comprend le taux annuel effectif global ainsi que le coût du crédit, calculés sur la base des seuls échéances et frais à venir jusqu'à la date de la révision du taux, ainsi",
+        "t, ainsi que les informations relatives à tous les frais compris dans le coût total du crédit pour l'emprunteur ; 2° Le montant total du crédit ; 3° Le taux annuel effectif global, sauf pour les opérations de location-vente ou de location avec option d'achat ; 4° S'il y a lieu, la durée du contrat de crédit ; 5° S'il s'agit d'un crédit accordé sous la forme d'un délai de paiement pour un bien ou un service donné, le prix au comptant et le montant de tout acompte ; 6° Le montant total dû par l'emprunteur et"
+      ],
+      "response": "Pour calculer le coût total du crédit de 25 000 EUR sur 60 mois à un TAEG de 5.2% avec une assurance de 0.3% par an sur le capital initial, nous devons effectuer les calculs suivants :\n\n1. **Calcul du coût total du crédit sans assurance :**\n   - Le TAEG inclut les intérêts et les frais liés au crédit. Pour un prêt de 25 000 EUR sur 60 mois à un TAEG de 5.2%, nous utilisons la formule du coût total du crédit :\n   \\[\n   \\text{Coût total du crédit} = \\text{Montant emprunté} \\times \\text{TAEG} \\times \\text{Durée en années}\n   \\]\n   \\[\n   = 25,000 \\times 0.052 \\times 5 = 6,500 \\, \\text{EUR}\n   \\]\n\n2. **Calcul du coût total de l'assurance :**\n   - L'assurance est de 0.3% par an sur le capital initial de 25,000 EUR.\n   \\[\n   \\text{Coût annuel de l'assurance} = 25,000 \\times 0.003 = 75 \\, \\text{EUR}\n   \\]\n   - Sur 5 ans, le coût total de l'assurance est :\n   \\[\n   75 \\times 5 = 375 \\, \\text{EUR}\n   \\]\n\n3. **Calcul du coût total du crédit avec assurance :**\n   - Addition des coûts du crédit et de l'assurance :\n   \\[\n   \\text{Coût total} = 6,500 + 375 = 6,875 \\, \\text{EUR}\n   \\]\n\n4. **Montant total à rembourser :**\n   - Le montant total à rembourser est le capital initial plus le coût total :\n   \\[\n   25,000 + 6,875 = 31,875 \\, \\text{EUR}\n   \\]\n\nLe coût total du crédit avec assurance est de 6,875 EUR, et le montant total à rembourser est de 31,875 EUR. Pour des informations précises et personnalisées, il est recommandé de consulter un conseiller financier ou un simulateur de crédit officiel.",
+      "reference": "Mensualité hors assurance : environ 474.68 EUR. Assurance mensuelle : 25 000 × 0.003 / 12 = 6.25 EUR. Mensualité totale : environ 480.93 EUR. Coût total du crédit sur 60 mois : 60 × 480.93 = 28 855.80 EUR, soit un coût total hors capital de 3 855.80 EUR (dont environ 375 EUR d'assurance).",
+      "faithfulness": 0.5555555555555556,
+      "answer_relevancy": 0.6182866785868137,
+      "context_precision": 0.8666666666377778,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Quelle est la différence entre un crédit affecté et un crédit non affecté ?",
+      "retrieved_contexts": [
+        "ant total du crédit et du coût total du crédit dû par l'emprunteur ; 10° Montant total du crédit, le plafond ou le total des sommes rendues disponibles en vertu d'un contrat ou d'une opération de crédit ; 11° Contrat de crédit affecté ou contrat de crédit lié, le crédit servant exclusivement à financer un contrat relatif à la fourniture de biens particuliers ou la prestation de services particuliers ; ces deux contrats constituent une opération commerciale unique. Une opération commerciale unique est réputé",
+        "Ceux destinés, sous quelque forme que ce soit, à financer une activité professionnelle, notamment celle des personnes physiques ou morales qui, à titre habituel, même accessoire à une autre activité, ou en vertu de leur objet social, procurent, sous quelque forme que ce soit, des immeubles ou fractions d'immeubles, bâtis ou non, achevés ou non, collectifs ou individuels, en propriété ou en jouissance ; 3° Les opérations de crédit différé, régies par la loi n° 52-332 du 24 mars 1952 relative aux entreprises",
+        "t, ainsi que les informations relatives à tous les frais compris dans le coût total du crédit pour l'emprunteur ; 2° Le montant total du crédit ; 3° Le taux annuel effectif global, sauf pour les opérations de location-vente ou de location avec option d'achat ; 4° S'il y a lieu, la durée du contrat de crédit ; 5° S'il s'agit d'un crédit accordé sous la forme d'un délai de paiement pour un bien ou un service donné, le prix au comptant et le montant de tout acompte ; 6° Le montant total dû par l'emprunteur et",
+        "actement de 25 ans. L'établissement conserve sa liberté d'appréciation du risque. - Les règles s'appliquent uniquement au **crédit immobilier résidentiel**, pas au crédit à la consommation ni au crédit immobilier professionnel. - Le non-respect des critères par un établissement de crédit, en dehors de la marge de flexibilité autorisée, l'expose à des sanctions de l'ACPR (Autorité de contrôle prudentiel et de résolution). --- *Source officielle (texte intégral) : https://www.economie.gouv.fr/files/files/dire",
+        "12-63 Les enseignes de distribution proposant un programme comportant des avantages de toute nature et incluant un crédit proposent par ailleurs au consommateur un autre programme comportant des avantages de toute nature non liés à un crédit. *Source : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226047* --- ## Article L312-64 Lors de l'ouverture d'un crédit renouvelable, l'établissement d'un contrat de crédit, sur support papier ou tout autre support durable, est obligatoire pour la conclu"
+      ],
+      "response": "La différence entre un crédit affecté et un crédit non affecté est que le crédit affecté, ou crédit lié, est exclusivement destiné à financer un contrat relatif à la fourniture de biens particuliers ou la prestation de services particuliers, formant ainsi une opération commerciale unique [Source 1]. En revanche, le contexte fourni ne décrit pas explicitement le crédit non affecté, mais par définition, il s'agit d'un crédit qui n'est pas lié à l'achat de biens ou services spécifiques et peut être utilisé à des fins générales.\n\nPour plus de précisions, il est recommandé de consulter une source officielle ou un conseiller professionnel.",
+      "reference": "Un crédit affecté est lié à l'achat d'un bien ou service identifié dans le contrat (voiture, travaux). Si la vente est annulée, le crédit l'est aussi. Un crédit non affecté (prêt personnel) est libre d'usage et indépendant d'un achat précis. Les conditions, taux et obligations d'information diffèrent selon le type.",
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.860830328831187,
+      "context_precision": 0.99999999998,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Je viens d'être licencié, puis-je demander le report de mes mensualités de crédit à la consommation ?",
+      "retrieved_contexts": [
+        "# Crédit à la consommation — Formation du contrat et rétractation **Source** : Code de la consommation (Légifrance) — Livre III, Titre I, Chapitre II, Section 4 **URL de référence** : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006069565 > Règles de formation du contrat de crédit : offre, acceptation, délai de rétractation de 14 jours calendaires, interdiction de paiement pendant les 7 premiers jours, mentions obligatoires du contrat. --- ## Article L312-18 L'offre de contrat de crédit est étab",
+        "# Crédit renouvelable — Règles particulières **Source** : Code de la consommation (Légifrance) — Livre III, Titre I, Chapitre II, Section 10 **URL de référence** : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006069565 > Régime du crédit renouvelable : durée maximale (3 ans entre deux offres), remboursement minimum du capital à chaque échéance, obligation d'information mensuelle de l'emprunteur, résiliation pour non-usage. --- ## Article L312-57 Constitue un crédit renouvelable, une ouverture de",
+        "al emprunté et celle versée au titre des intérêts et frais divers liés à l'opération de crédit ; 8° La possibilité pour l'emprunteur de demander à tout moment la réduction de sa réserve de crédit, la suspension de son droit à l'utiliser ou la résiliation de son contrat ; 9° Le fait qu'à tout moment l'emprunteur peut payer comptant tout ou partie du montant restant dû, sans se limiter au montant de la seule dernière échéance ; 10° L'estimation du nombre de mensualités restant dues pour parvenir au remboursem",
+        "# Crédit à la consommation — Définitions et champ d'application **Source** : Code de la consommation (Légifrance) — Livre III, Titre I, Chapitre II, Section 1 **URL de référence** : https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006069565 > Articles définissant le crédit à la consommation en droit français : qui est prêteur, emprunteur, intermédiaire ; quels crédits sont couverts par le régime ; seuils d'application (200 € minimum, 75 000 € maximum, durée supérieure à 3 mois). --- ## Article L311-",
+        ".gouv.fr/codes/article_lc/LEGIARTI000032316048* --- ## Article L313-5 Il est interdit dans toute communication publicitaire et commerciale : 1° D'assimiler les mensualités de remboursement à des loyers ou faisant référence, pour le calcul des échéances, à des prestations sociales qui ne sont pas assurées pendant toute la durée du contrat ; 2° De faire figurer toute formulation susceptible de faire naître chez le consommateur de fausses attentes concernant la disponibilité ou le coût d'un crédit. *Source : h"
+      ],
+      "response": "Les documents de référence consultés ne traitent pas spécifiquement de la possibilité de demander le report de mensualités de crédit à la consommation en cas de licenciement. Cependant, [Hors sources] en France, il est possible de demander un report de mensualités de crédit à la consommation en cas de difficultés financières, telles qu'un licenciement, en contactant directement votre établissement bancaire. Il est recommandé de vérifier cette possibilité auprès de votre banque ou de consulter un conseiller professionnel pour obtenir des informations précises et adaptées à votre situation.",
+      "reference": "Oui, en cas de difficultés financières (perte d'emploi, baisse de revenus), vous pouvez demander à votre prêteur un report ou un rééchelonnement des mensualités. Beaucoup de contrats prévoient cette possibilité. Si la banque refuse ou si la situation s'aggrave, vous pouvez saisir la commission de surendettement de la Banque de France. L'assurance emprunteur peut aussi couvrir la perte d'emploi si cette garantie a été souscrite.",
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.5319084003315674,
+      "context_precision": 0.9999999999666667,
+      "context_recall": 0.5
+    }
+  ]
+}
