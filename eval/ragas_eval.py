@@ -27,6 +27,8 @@ load_dotenv()
 from datasets import Dataset
 from ragas.run_config import RunConfig
 from ragas import evaluate
+# Use ragas.metrics (singletons already instantiated) rather than
+# ragas.metrics.collections (which exposes modules, not classes).
 from ragas.metrics import (
     faithfulness,
     answer_relevancy,
@@ -103,6 +105,35 @@ def configure_ragas_judge():
     return judge_llm, embeddings
 
 
+def prewarm_ollama(models: list[str], base: str | None = None) -> None:
+    """Load each model into Ollama memory before the eval loop starts.
+
+    Without this, the first ~90s of pipeline runs time out while phi4 (14B)
+    is still being loaded from disk into VRAM/RAM. We ping each model with a
+    trivial prompt to force the load, then the eval proceeds against a hot
+    runtime.
+    """
+    import urllib.request
+    import urllib.error
+    base = (base or os.getenv("OLLAMA_API_BASE", "http://localhost:11434")).rstrip("/")
+    for model in models:
+        name = model.replace("ollama/", "")
+        print(f"Pre-warming {name}...", end=" ", flush=True)
+        payload = json.dumps({
+            "model": name, "prompt": "ok", "stream": False,
+            "options": {"num_predict": 1},
+        }).encode()
+        req = urllib.request.Request(
+            f"{base}/api/generate", data=payload,
+            headers={"Content-Type": "application/json"},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=180) as _:
+                print("loaded.")
+        except (urllib.error.URLError, TimeoutError) as e:
+            print(f"warning: pre-warm failed ({e}). Continuing anyway.")
+
+
 def run_evaluation(pipeline_name: str) -> dict:
     """End-to-end eval: load dataset, run pipeline, score with Ragas."""
     from ragas.run_config import RunConfig
@@ -122,12 +153,19 @@ def run_evaluation(pipeline_name: str) -> dict:
     entries = load_golden_dataset()
     print(f"Loaded {len(entries)} entries.\n")
 
-    print(f"=== Running pipeline: {pipeline_name} ===")
+    print(f"=== Pre-warming Ollama models ===")
+    pipeline_model = os.getenv("LITELLM_MODEL", "ollama/phi4")
+    judge_model = os.getenv("RAGAS_JUDGE_MODEL", "ollama/llama3:8b")
+    embed_model = os.getenv("LITELLM_EMBEDDING_MODEL", "ollama/nomic-embed-text")
+    prewarm_ollama([pipeline_model, judge_model, embed_model])
+
+    print(f"\n=== Running pipeline: {pipeline_name} ===")
     dataset = build_ragas_dataset(entries, pipeline_fn)
 
     print(f"\n=== Configuring Ragas judge ===")
     judge_llm, embeddings = configure_ragas_judge()
 
+    # These are pre-instantiated singletons from ragas.metrics (not classes).
     metrics = [
         faithfulness,
         answer_relevancy,

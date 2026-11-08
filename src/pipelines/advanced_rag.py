@@ -33,7 +33,7 @@ CANDIDATES_K = 20   # how many we fetch from each retriever before reranking
 FINAL_K = 5         # how many make it into the LLM prompt
 RRF_K_CONSTANT = 60 # reciprocal rank fusion constant (standard)
 
-qdrant = QdrantClient(url=QDRANT_URL)
+qdrant = QdrantClient(url=QDRANT_URL, timeout=200)
 
 # Load the reranker once at import time — it's slow to initialize
 print("Loading reranker model (first run downloads ~500MB)...")

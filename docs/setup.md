@@ -149,6 +149,14 @@ uv run python src\pipelines\naive_rag.py
 uv run python src\pipelines\advanced_rag.py
 ```
 
+### Safe RAG (intent classifier + hybrid+rerank + confidence threshold)
+
+```powershell
+uv run python src\pipelines\safe_rag.py
+```
+
+Le script teste automatiquement 3 branches : une question in-scope (générée normalement), une question de conseil personnel (refus structuré), une question hors-domaine (refus structuré).
+
 ### Vérifications post-smoke test
 
 Pour chaque pipeline, ouvrir **http://localhost:3000** → **Traces** et vérifier qu'une nouvelle trace du bon nom apparaît avec les spans attendus :
@@ -157,7 +165,8 @@ Pour chaque pipeline, ouvrir **http://localhost:3000** → **Traces** et vérifi
 | --- | --- |
 | `baseline` | `prompt_build`, `llm_answer` |
 | `naive_rag` | `vector_search`, `prompt_build`, `llm_answer` |
-| `advanced_rag` | `vector_search`, `bm25_search`, `rrf_fusion`, `rerank`, `prompt_build`, `llm_answer` |
+| `advanced_rag` | `vector_search`, `bm25_search`, `rrf_fusion`, `rerank`, `llm_answer` |
+| `safe_rag` | `intent_classify` → (refusal direct) OU `vector_search`, `bm25_search`, `rrf_fusion`, `rerank`, `confidence_check`, `llm_answer` |
 
 Si un span manque ou est mal nommé, c'est à corriger dans le code avant de lancer l'éval.
 
@@ -168,13 +177,33 @@ Si un span manque ou est mal nommé, c'est à corriger dans le code avant de lan
 ### Variables d'environnement à vérifier dans `.env`
 
 ```ini
-LITELLM_MODEL=ollama/phi4          # modèle sous test
-RAGAS_JUDGE_MODEL=ollama/llama3:8b # juge indépendant (ne pas confondre)
-OLLAMA_BASE=http://localhost:11434
+# Modèles
+LITELLM_MODEL=ollama/phi4                       # modèle sous test (pipelines)
+RAGAS_JUDGE_MODEL=ollama/llama3:8b              # juge Ragas (indépendant du pipeline)
+INTENT_MODEL=ollama/llama3:8b                   # classifier pour safe_rag
+LITELLM_EMBEDDING_MODEL=ollama/nomic-embed-text # embeddings
+
+# Infrastructure
+OLLAMA_API_BASE=http://localhost:11434
 QDRANT_URL=http://localhost:6333
+QDRANT_COLLECTION=creditdoc
 LANGFUSE_HOST=http://localhost:3000
 LANGFUSE_PUBLIC_KEY=...
 LANGFUSE_SECRET_KEY=...
+
+# Tuning
+OLLAMA_KEEP_ALIVE=30m        # évite l'éviction de phi4 pendant l'éval
+RERANK_THRESHOLD=0.0         # seuil top-1 reranker pour safe_rag (calibrable)
+RAGAS_DO_NOT_TRACK=true      # fait taire les erreurs HTTP tracking anonyme Ragas
+```
+
+
+#### Pré-chauffer pour éviter les timeouts tardifs
+
+```powershell
+ollama run phi4 "ok" --keepalive 2h
+ollama run llama3:8b "ok" --keepalive 2h
+ollama run nomic-embed-text "ok" --keepalive 2h
 ```
 
 ### Éval d'un pipeline seul
@@ -183,6 +212,7 @@ LANGFUSE_SECRET_KEY=...
 uv run python eval\ragas_eval.py --pipeline baseline
 uv run python eval\ragas_eval.py --pipeline naive_rag
 uv run python eval\ragas_eval.py --pipeline advanced_rag
+uv run python eval\ragas_eval.py --pipeline safe_rag
 ```
 
 Chaque run : 15 questions × ~1-2 min = **~15-30 min** de runtime unattended.
@@ -192,10 +222,17 @@ Chaque run : 15 questions × ~1-2 min = **~15-30 min** de runtime unattended.
 ```powershell
 uv run python eval\ragas_eval.py --pipeline baseline; `
 uv run python eval\ragas_eval.py --pipeline naive_rag; `
-uv run python eval\ragas_eval.py --pipeline advanced_rag
+uv run python eval\ragas_eval.py --pipeline advanced_rag; `
+uv run python eval\ragas_eval.py --pipeline safe_rag; `
+uv run python eval\ragas_eval.py --pipeline agent_rag
 ```
 
-**Total : ~60-90 min**. Lance avant d'aller dormir, résultats au réveil.
+### Lancement de l'interface chainlit
+
+```powershell
+uv run chainlit run ui/app.py
+```
+
 
 ### Résultats
 
@@ -353,19 +390,24 @@ docker compose up -d
 ```powershell
 # 1. Modifier le code (pipeline, prompt, chunking…)
 
-# 2. Smoke test rapide
-uv run python src\pipelines\naive_rag.py
+# 2. Smoke test rapide du pipeline modifié
+uv run python src\pipelines\<pipeline>.py
 
 # 3. Vérifier la trace dans Langfuse
-# → http://localhost:3000
+# → http://localhost:3000 — filtrer par tag <pipeline>
 
-# 4. Si OK, lancer l'éval complète
-uv run python eval\ragas_eval.py --pipeline naive_rag
+# 4. Si OK, re-ingérer si le corpus a bougé
+uv run python src\ingestion\ingest.py --source data\corpus
 
-# 5. Comparer le rapport résultat au précédent
-code eval\results\naive_rag_<DATE_PRECEDENTE>.md eval\results\naive_rag_<DATE_NOUVELLE>.md
+# 5. Lancer l'éval complète
+uv run python eval\ragas_eval.py --pipeline <pipeline>
 
-# 6. Si delta intéressant, drafter le post LinkedIn dans drafts/
+# 6. Comparer le rapport résultat au précédent
+code eval\results\<pipeline>_<DATE_PRECEDENTE>.md eval\results\<pipeline>_<DATE_NOUVELLE>.md
+
+# 7. Debug question par question dans Langfuse (traces filtrées par tag)
+
+# 8. Si delta intéressant, drafter le post LinkedIn dans drafts/
 ```
 
 ---
@@ -375,10 +417,11 @@ code eval\results\naive_rag_<DATE_PRECEDENTE>.md eval\results\naive_rag_<DATE_NO
 | Rôle | Chemin |
 | --- | --- |
 | Corpus | `C:\repos\creditdoc-ai\data\corpus\` |
-| Golden dataset | `C:\repos\creditdoc-ai\eval\golden_dataset.jsonl` |
+| Golden dataset | `C:\repos\creditdoc-ai\eval\golden_dataset.jsonl` (25 entrées) |
 | Résultats d'évals | `C:\repos\creditdoc-ai\eval\results\` |
 | Drafts LinkedIn | `C:\repos\creditdoc-ai\drafts\` |
-| Pipelines | `C:\repos\creditdoc-ai\src\pipelines\` |
+| Pipelines | `C:\repos\creditdoc-ai\src\pipelines\` (baseline / naive_rag / advanced_rag / safe_rag) |
 | Helper Langfuse | `C:\repos\creditdoc-ai\src\observability\langfuse_helper.py` |
 | Config Docker | `C:\repos\creditdoc-ai\docker-compose.yml` |
 | Config env | `C:\repos\creditdoc-ai\.env` |
+| Docs projet | `C:\repos\creditdoc-ai\docs\` |
